@@ -2,16 +2,45 @@
 
 This guide helps an agent set up the **skill** and connect it to a local Cytoscape installation. It does not authorize the agent to install system software or change global client settings without your approval.
 
-## 1. Give your agent the skill
+## 1. Download the project
 
-Clone this repository or download the source archive, then point your agent at `cytoscape-agent-skill/`.
+Clone this repository or download the source archive.
 
 ```bash
 git clone https://github.com/cndoin/cytoscape-agent-skill.git
-cd cytoscape-agent-skill/cytoscape-agent-skill
+cd cytoscape-agent-skill
 ```
 
-For Claude Code and compatible skills clients, install or copy the folder according to that client's current skill discovery rules. For Codex CLI, make `AGENTS.md` available in the project context. Other agents can read `SKILL.md` and use the CLI directly.
+The reusable skill folder is `cytoscape-agent-skill/` inside this repository. Copy that entire folder, including `SKILL.md`, `AGENTS.md`, `scripts/`, `docs/`, and `assets/`, to the directory used by your agent.
+
+### Codex
+
+For a personal installation, copy the skill to `$CODEX_HOME/skills/cytoscape` (normally `~/.codex/skills/cytoscape`). For a project installation, place it under `.agents/skills/cytoscape/` in your project. Codex reads `AGENTS.md` from the project context; open/work from the skill folder when you want those instructions applied.
+
+macOS/Linux, from the cloned repository root:
+
+```bash
+mkdir -p "${CODEX_HOME:-$HOME/.codex}/skills/cytoscape"
+cp -R cytoscape-agent-skill/. "${CODEX_HOME:-$HOME/.codex}/skills/cytoscape/"
+```
+
+Windows PowerShell:
+
+```powershell
+$target = Join-Path $HOME '.codex\skills\cytoscape'
+New-Item -ItemType Directory -Force -Path $target | Out-Null
+Copy-Item -Path '.\cytoscape-agent-skill\*' -Destination $target -Recurse -Force
+```
+
+### Claude Code
+
+For personal use, copy the folder to `~/.claude/skills/cytoscape/`. For one project, use `<project>/.claude/skills/cytoscape/`. Restart or reload Claude Code if the skill does not appear.
+
+### VS Code / GitHub Copilot
+
+For a repository skill, use `<project>/.github/skills/cytoscape/` or `<project>/.agents/skills/cytoscape/`. For a personal skill, VS Code documents `~/.copilot/skills/`, `~/.claude/skills/`, and `~/.agents/skills/` as supported locations. Check the [VS Code Agent Skills guide](https://code.visualstudio.com/docs/agent-customization/agent-skills) for current locations and settings.
+
+Other clients can read `SKILL.md` directly and run the CLI. Skill discovery differs by host; verify that the client lists `cytoscape` after reloading it.
 
 ## 2. Ask the agent to inspect first
 

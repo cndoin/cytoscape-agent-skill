@@ -87,7 +87,7 @@ You can ask a coding agent to install this skill. Start it in a checkout or past
 
 > Read `cytoscape-agent-skill/AGENTS.md` and `SKILL.md`. Run `python scripts/cyctl.py doctor` and `discover`, then explain the exact missing prerequisites and proposed changes. Do not install software, download the Cytoscape engine, or edit global agent configuration until I approve those specific changes. After approval, follow the documented setup, verify with `doctor`, and configure only the requested agent using `cyctl mcp`.
 
-For agent-specific instructions and one-command setup, see [`INSTALL.md`](INSTALL.md). This project does not silently install software or modify global agent settings.
+For agent-specific skill locations and copy commands, see [`INSTALL.md`](INSTALL.md). This project does not silently install software or modify global agent settings.
 
 ## Project map
 
