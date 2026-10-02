@@ -37,6 +37,16 @@ import time
 import zipfile
 from pathlib import Path
 
+# Package diagnostics include Chinese text. Windows CI and redirected consoles
+# may default to cp1252/GBK and otherwise fail after the archive is built.
+for _stream in (sys.stdout, sys.stderr):
+    _reconfigure = getattr(_stream, "reconfigure", None)
+    if _reconfigure is not None:
+        try:
+            _reconfigure(encoding="utf-8", errors="backslashreplace")
+        except (OSError, ValueError):
+            pass
+
 ROOT = Path(__file__).resolve().parent.parent          # skill 根目录
 PKG_NAME = "cytoscape-agent-skill"
 
