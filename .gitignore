@@ -1,0 +1,24 @@
+# 运行时产物（引擎、下载缓存、PID、日志、溯源清单）—— 体积可达数百 MB
+**/runtime/
+**/runs/
+**/baselines/
+# 审计用的第三方取包缓存（wheel 不 vendor，见 tools/audit/upstream_client_surface.py）
+**/.cache/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# 打包产物
+**/dist/
+
+# cyctl 写入宿主配置时产生的备份
+*.cyctl-bak

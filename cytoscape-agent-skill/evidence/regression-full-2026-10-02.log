@@ -1,0 +1,286 @@
+test_default (test_cyctl.TestBaseUrlResolution.test_default) ... ok
+test_env_var (test_cyctl.TestBaseUrlResolution.test_env_var) ... ok
+test_explicit_wins (test_cyctl.TestBaseUrlResolution.test_explicit_wins) ... ok
+test_port_argument (test_cyctl.TestBaseUrlResolution.test_port_argument) ... ok
+test_describe_is_json (test_cyctl.TestCliContract.test_describe_is_json) ... ok
+test_env_is_json_and_reports_platform (test_cyctl.TestCliContract.test_env_is_json_and_reports_platform) ... ok
+test_provision_reports_unsupported_combo_without_touching_network (test_cyctl.TestCliContract.test_provision_reports_unsupported_combo_without_touching_network)
+Linux 上没有官方 JRE 产物 -> 必须给出可读 hint + 退出码 3，且绝不发起下载。 ... ok
+test_status_when_engine_absent_returns_remote_error_code (test_cyctl.TestCliContract.test_status_when_engine_absent_returns_remote_error_code) ... ok
+test_version_flag (test_cyctl.TestCliContract.test_version_flag) ... ok
+test_split_command_rejects_empty (test_cyctl.TestCommandParsing.test_split_command_rejects_empty) ... ok
+test_split_command_with_params (test_cyctl.TestCommandParsing.test_split_command_with_params) ... ok
+test_split_command_without_params (test_cyctl.TestCommandParsing.test_split_command_without_params) ... ok
+test_underscore_and_dash_param_names (test_cyctl.TestCommandParsing.test_underscore_and_dash_param_names) ... ok
+test_connection_failure_is_classified_not_ready (test_cyctl.TestProxyBypass.test_connection_failure_is_classified_not_ready) ... ok
+test_explicit_use_proxy_still_supported (test_cyctl.TestProxyBypass.test_explicit_use_proxy_still_supported)
+use_proxy=True 时交回 urllib 的默认行为（读环境变量），便于远端部署场景。 ... ok
+test_localhost_request_does_not_go_through_env_proxy (test_cyctl.TestProxyBypass.test_localhost_request_does_not_go_through_env_proxy)
+行为级验证：起一个「对任何请求都回 502」的假代理。 ... ok
+test_get_two_word_command_url_and_params (test_cyctl.TestUrlConstruction.test_get_two_word_command_url_and_params) ... ok
+test_get_without_params_returns_none (test_cyctl.TestUrlConstruction.test_get_without_params_returns_none) ... ok
+test_post_command_without_args_yields_empty_body (test_cyctl.TestUrlConstruction.test_post_command_without_args_yields_empty_body) ... ok
+test_post_three_word_command (test_cyctl.TestUrlConstruction.test_post_three_word_command) ... ok
+test_post_value_containing_equals_sign_is_split_once (test_cyctl.TestUrlConstruction.test_post_value_containing_equals_sign_is_split_once) ... ok
+test_quotes_stripped_in_get_values (test_cyctl.TestUrlConstruction.test_quotes_stripped_in_get_values) ... ok
+test_single_word_command (test_cyctl.TestUrlConstruction.test_single_word_command) ... ok
+test_engine_modes_documented (test_cyctl.TestVersionLockIntegrity.test_engine_modes_documented) ... ok
+test_every_artifact_declares_arch (test_cyctl.TestVersionLockIntegrity.test_every_artifact_declares_arch) ... ok
+test_every_official_hash_matches_official_manifest (test_cyctl.TestVersionLockIntegrity.test_every_official_hash_matches_official_manifest) ... ok
+test_release_base_matches_pinned_version (test_cyctl.TestVersionLockIntegrity.test_release_base_matches_pinned_version) ... ok
+test_schema_and_pin (test_cyctl.TestVersionLockIntegrity.test_schema_and_pin) ... ok
+test_support_matrix_is_honest_about_missing_artifacts (test_cyctl.TestVersionLockIntegrity.test_support_matrix_is_honest_about_missing_artifacts)
+support_matrix 里的每一项，都必须能在 artifacts 里找到对应产物（或明确为 null）。 ... ok
+test_unhashed_artifacts_are_declared_not_silently_trusted (test_cyctl.TestVersionLockIntegrity.test_unhashed_artifacts_are_declared_not_silently_trusted) ... ok
+test_notification_gets_202_and_no_output (test_hosts_bridge.TestBridgeRoundTrip.test_notification_gets_202_and_no_output) ... [cyctl-bridge] 桥接启动：stdio → http://127.0.0.1:49814/mcp
+[cyctl-bridge] stdin 结束，桥退出
+ok
+test_round_trip_and_session_propagation (test_hosts_bridge.TestBridgeRoundTrip.test_round_trip_and_session_propagation) ... [cyctl-bridge] 桥接启动：stdio → http://127.0.0.1:49819/mcp
+<local-path>:710: ResourceWarning: unclosed <socket.socket fd=836, family=2, type=1, proto=0, laddr=('127.0.0.1', 54987)>
+  def readinto(self, b):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+[cyctl-bridge] stdin 结束，桥退出
+ok
+test_stdout_is_pure_protocol (test_hosts_bridge.TestBridgeRoundTrip.test_stdout_is_pure_protocol) ... [cyctl-bridge] 桥接启动：stdio → http://127.0.0.1:49823/mcp
+[cyctl-bridge] stdin 结束，桥退出
+ok
+test_unreachable_endpoint_yields_jsonrpc_error (test_hosts_bridge.TestBridgeRoundTrip.test_unreachable_endpoint_yields_jsonrpc_error) ... [cyctl-bridge] 桥接启动：stdio → http://127.0.0.1:1/mcp
+[cyctl-bridge] stdin 结束，桥退出
+ok
+test_backup_is_created (test_hosts_bridge.TestConfigWriteSafety.test_backup_is_created) ... ok
+test_creates_new_file (test_hosts_bridge.TestConfigWriteSafety.test_creates_new_file) ... ok
+test_idempotent (test_hosts_bridge.TestConfigWriteSafety.test_idempotent) ... ok
+test_merge_preserves_existing_servers (test_hosts_bridge.TestConfigWriteSafety.test_merge_preserves_existing_servers) ... ok
+test_refuses_invalid_json (test_hosts_bridge.TestConfigWriteSafety.test_refuses_invalid_json) ... ok
+test_refuses_mixed_config (test_hosts_bridge.TestConfigWriteSafety.test_refuses_mixed_config) ... ok
+test_toml_appends_section_and_is_idempotent (test_hosts_bridge.TestConfigWriteSafety.test_toml_appends_section_and_is_idempotent) ... ok
+test_dedicated_files_detected (test_hosts_bridge.TestDedicatedConfig.test_dedicated_files_detected) ... ok
+test_mixed_files_detected (test_hosts_bridge.TestDedicatedConfig.test_mixed_files_detected) ... ok
+test_disk_free_returns_number_or_none (test_hosts_bridge.TestEngineDiscovery.test_disk_free_returns_number_or_none) ... ok
+test_finds_bundled_installation (test_hosts_bridge.TestEngineDiscovery.test_finds_bundled_installation) ... ok
+test_platform_key_is_known (test_hosts_bridge.TestEngineDiscovery.test_platform_key_is_known) ... ok
+test_probe_java_missing_returns_none (test_hosts_bridge.TestEngineDiscovery.test_probe_java_missing_returns_none) ... ok
+test_version_hint_extracted_from_path (test_hosts_bridge.TestEngineDiscovery.test_version_hint_extracted_from_path) ... ok
+test_walk_limited_finds_targets (test_hosts_bridge.TestEngineDiscovery.test_walk_limited_finds_targets) ... ok
+test_walk_limited_respects_depth (test_hosts_bridge.TestEngineDiscovery.test_walk_limited_respects_depth) ... ok
+test_xvfb_status_shape (test_hosts_bridge.TestEngineDiscovery.test_xvfb_status_shape) ... ok
+test_all_hosts_have_verified_doc_source (test_hosts_bridge.TestHostEntryShapes.test_all_hosts_have_verified_doc_source) ... ok
+test_claude_code_and_vscode_need_type_http (test_hosts_bridge.TestHostEntryShapes.test_claude_code_and_vscode_need_type_http) ... ok
+test_claude_desktop_must_use_stdio_bridge (test_hosts_bridge.TestHostEntryShapes.test_claude_desktop_must_use_stdio_bridge) ... ok
+test_cli_commands_contain_url (test_hosts_bridge.TestHostEntryShapes.test_cli_commands_contain_url) ... ok
+test_codex_is_toml_in_mcp_servers_section (test_hosts_bridge.TestHostEntryShapes.test_codex_is_toml_in_mcp_servers_section) ... ok
+test_cursor_uses_bare_url (test_hosts_bridge.TestHostEntryShapes.test_cursor_uses_bare_url) ... ok
+test_gemini_uses_httpurl_not_url (test_hosts_bridge.TestHostEntryShapes.test_gemini_uses_httpurl_not_url) ... ok
+test_other_hosts_use_mcpservers (test_hosts_bridge.TestHostEntryShapes.test_other_hosts_use_mcpservers) ... ok
+test_unknown_host_raises (test_hosts_bridge.TestHostEntryShapes.test_unknown_host_raises) ... ok
+test_vscode_top_level_key_is_servers_not_mcpservers (test_hosts_bridge.TestHostEntryShapes.test_vscode_top_level_key_is_servers_not_mcpservers) ... ok
+test_windsurf_uses_serverurl (test_hosts_bridge.TestHostEntryShapes.test_windsurf_uses_serverurl) ... ok
+test_bridge_probe (test_hosts_bridge.TestNewCliContract.test_bridge_probe) ... ok
+test_discover (test_hosts_bridge.TestNewCliContract.test_discover) ... ok
+test_doctor_always_emits_json (test_hosts_bridge.TestNewCliContract.test_doctor_always_emits_json) ... ok
+test_mcp_full_matrix (test_hosts_bridge.TestNewCliContract.test_mcp_full_matrix) ... ok
+test_mcp_single_host_shortcut (test_hosts_bridge.TestNewCliContract.test_mcp_single_host_shortcut) ... ok
+test_mcp_unknown_host_is_usage_error (test_hosts_bridge.TestNewCliContract.test_mcp_unknown_host_is_usage_error) ... ok
+test_mcp_write_config_creates_and_refuses_mixed (test_hosts_bridge.TestNewCliContract.test_mcp_write_config_creates_and_refuses_mixed) ... ok
+test_mcp_write_config_only_prints_without_flag (test_hosts_bridge.TestNewCliContract.test_mcp_write_config_only_prints_without_flag) ... ok
+test_start_attach_requires_running_engine (test_hosts_bridge.TestNewCliContract.test_start_attach_requires_running_engine) ... ok
+test_start_system_engine_gives_actionable_hint (test_hosts_bridge.TestNewCliContract.test_start_system_engine_gives_actionable_hint) ... ok
+test_comments_ignored (test_hosts_bridge.TestSseParsing.test_comments_ignored) ... ok
+test_event_without_trailing_blank_line (test_hosts_bridge.TestSseParsing.test_event_without_trailing_blank_line) ... ok
+test_extract_messages_from_json (test_hosts_bridge.TestSseParsing.test_extract_messages_from_json) ... ok
+test_extract_messages_from_sse (test_hosts_bridge.TestSseParsing.test_extract_messages_from_sse) ... ok
+test_multiline_data_joined (test_hosts_bridge.TestSseParsing.test_multiline_data_joined) ... ok
+test_non_json_sse_ignored_not_crashing (test_hosts_bridge.TestSseParsing.test_non_json_sse_ignored_not_crashing) ... ok
+test_single_event (test_hosts_bridge.TestSseParsing.test_single_event) ... ok
+test_bytes_are_written_verbatim (test_safety.TestBinaryDownloadContract.test_bytes_are_written_verbatim) ... ok
+test_content_length_mismatch_is_rejected (test_safety.TestBinaryDownloadContract.test_content_length_mismatch_is_rejected)
+声明 100 字节、实收 3 字节：必须失败，不得把截断当成功产物。 ... ok
+test_http_error_is_reported_with_status (test_safety.TestBinaryDownloadContract.test_http_error_is_reported_with_status) ... ok
+test_json_error_envelope_is_not_saved_as_product (test_safety.TestBinaryDownloadContract.test_json_error_envelope_is_not_saved_as_product)
+HTTP 200 + JSON 错误信封：不能把这张错误页当成功产物留下来。 ... ok
+test_rest_exposes_out (test_safety.TestBinaryDownloadContract.test_rest_exposes_out) ... ok
+test_bad_body_json (test_safety.TestCliJsonContract.test_bad_body_json) ... ok
+test_bad_param_without_equals (test_safety.TestCliJsonContract.test_bad_param_without_equals) ... ok
+test_describe_is_json_and_lists_new_commands (test_safety.TestCliJsonContract.test_describe_is_json_and_lists_new_commands) ... ok
+test_malformed_workflow_json (test_safety.TestCliJsonContract.test_malformed_workflow_json) ... ok
+test_missing_required_positional (test_safety.TestCliJsonContract.test_missing_required_positional) ... ok
+test_missing_workflow_file (test_safety.TestCliJsonContract.test_missing_workflow_file) ... ok
+test_unknown_option (test_safety.TestCliJsonContract.test_unknown_option) ... ok
+test_unknown_subcommand (test_safety.TestCliJsonContract.test_unknown_subcommand) ... ok
+test_unknown_variant (test_safety.TestCliJsonContract.test_unknown_variant) ... ok
+test_version_is_json (test_safety.TestCliJsonContract.test_version_is_json) ... ok
+test_allow_execute_does_not_unlock_dangerous_verbs (test_safety.TestCommandsGuard.test_allow_execute_does_not_unlock_dangerous_verbs)
+--allow-execute 是「允许走执行端点」，不是「允许关引擎」。 ... ok
+test_allow_execute_is_declared_in_describe (test_safety.TestCommandsGuard.test_allow_execute_is_declared_in_describe)
+describe 必须把 --allow-execute 暴露出来，否则 Agent 无从得知。 ... ok
+test_dangerous_verbs_are_blocked (test_safety.TestCommandsGuard.test_dangerous_verbs_are_blocked) ... ok
+test_default_path_never_reports_executed (test_safety.TestCommandsGuard.test_default_path_never_reports_executed)
+非危险命令默认走只读清单；端口不通时应是远端错误（4）， ... ok
+test_help_mode_is_not_reported_as_executed (test_safety.TestCommandsGuard.test_help_mode_is_not_reported_as_executed) ... ok
+test_real_run_is_reported_as_executed (test_safety.TestCommandsGuard.test_real_run_is_reported_as_executed) ... ok
+test_call_operation_refuses (test_safety.TestDangerCommandGuard.test_call_operation_refuses) ... ok
+test_cli_uses_usage_exit_code (test_safety.TestDangerCommandGuard.test_cli_uses_usage_exit_code) ... ok
+test_danger_verb_tables_do_not_drift (test_safety.TestDangerCommandGuard.test_danger_verb_tables_do_not_drift)
+cyctl 与 cyrest 各有一份危险动词表，必须完全相同。 ... ok
+test_does_not_flag_normal_commands (test_safety.TestDangerCommandGuard.test_does_not_flag_normal_commands) ... ok
+test_download_refuses (test_safety.TestDangerCommandGuard.test_download_refuses) ... ok
+test_normal_operations_pass (test_safety.TestDangerCommandGuard.test_normal_operations_pass) ... ok
+test_recognises_dangerous_command_strings (test_safety.TestDangerCommandGuard.test_recognises_dangerous_command_strings) ... ok
+test_recognises_dangerous_operations (test_safety.TestDangerCommandGuard.test_recognises_dangerous_operations) ... ok
+test_run_command_refuses (test_safety.TestDangerCommandGuard.test_run_command_refuses) ... ok
+test_stop_quit_request_uses_json_accept (test_safety.TestDangerCommandGuard.test_stop_quit_request_uses_json_accept)
+stop 的优雅退出走 POST，Accept 必须是 application/json。 ... ok
+test_stop_treats_4xx_as_real_failure_not_disconnect (test_safety.TestDangerCommandGuard.test_stop_treats_4xx_as_real_failure_not_disconnect)
+4xx 不能解释成「进程退出导致连接中断」，否则真实故障被静默吞掉。 ... ok
+test_workflow_step_refuses (test_safety.TestDangerCommandGuard.test_workflow_step_refuses)
+工作流文件同样可能是外部给的，不能假定它安全。 ... ok
+test_empty_response_is_rejected (test_safety.TestDownloadStability.test_empty_response_is_rejected) ... [cyctl] 下载 http://x/y（第 1/1 次）
+[cyctl] 下载失败（第 1/1 次）：下载得到空文件（0 字节）
+ok
+test_failure_leaves_no_partial_archive (test_safety.TestDownloadStability.test_failure_leaves_no_partial_archive)
+下载失败后不能留下 dest 或 .part —— 否则会被下次调用当成有效缓存。 ... [cyctl] 下载 http://127.0.0.1:1/nope.tar.gz（第 1/1 次）
+[cyctl] 下载失败（第 1/1 次）：<urlopen error [WinError 10061] 由于目标计算机积极拒绝，无法连接。>
+ok
+test_is_within_rejects_sibling_prefix (test_safety.TestExtractSafety.test_is_within_rejects_sibling_prefix) ... ok
+test_normal_archive_still_extracts (test_safety.TestExtractSafety.test_normal_archive_still_extracts)
+防护不能误伤正常归档（含子目录与可执行位）。 ... [cyctl] 已解压到 <local-path>
+ok
+test_tar_absolute_path_is_rejected (test_safety.TestExtractSafety.test_tar_absolute_path_is_rejected) ... ok
+test_tar_slip_is_rejected (test_safety.TestExtractSafety.test_tar_slip_is_rejected) ... ok
+test_tar_symlink_escape_is_rejected (test_safety.TestExtractSafety.test_tar_symlink_escape_is_rejected)
+符号链接本身在 dest 内，但指向外部 —— 必须拒绝。 ... ok
+test_unsupported_type_raises (test_safety.TestExtractSafety.test_unsupported_type_raises) ... ok
+test_zip_normal_extracts (test_safety.TestExtractSafety.test_zip_normal_extracts) ... [cyctl] 已解压到 <local-path>
+ok
+test_zip_slip_is_rejected (test_safety.TestExtractSafety.test_zip_slip_is_rejected) ... ok
+test_short_help_is_json (test_safety.TestHelpContract.test_short_help_is_json) ... ok
+test_subcommand_help_is_json (test_safety.TestHelpContract.test_subcommand_help_is_json) ... ok
+test_top_level_help_is_json (test_safety.TestHelpContract.test_top_level_help_is_json) ... ok
+test_cli_does_not_return_internal_error_code (test_safety.TestOperationEncoding.test_cli_does_not_return_internal_error_code)
+真实走一次 CLI：带空格的 operation 不得以退出码 1 结束。 ... ok
+test_existing_escape_is_not_double_encoded (test_safety.TestOperationEncoding.test_existing_escape_is_not_double_encoded) ... ok
+test_leading_slash_stripped (test_safety.TestOperationEncoding.test_leading_slash_stripped) ... ok
+test_query_string_is_left_alone (test_safety.TestOperationEncoding.test_query_string_is_left_alone) ... ok
+test_space_is_percent_encoded (test_safety.TestOperationEncoding.test_space_is_percent_encoded) ... ok
+test_allow_unverified_opts_in (test_safety.TestProvisionSemantics.test_allow_unverified_opts_in) ... [cyctl] 选用产物: windows-amd64-17.0.5.tar.gz (temurin17)
+[cyctl] 下载代理: none -> 直连
+[cyctl] 警告：按 --allow-unverified 接受未校验归档（来源 tofu）
+ok
+test_already_installed_is_idempotent (test_safety.TestProvisionSemantics.test_already_installed_is_idempotent)
+目标已存在且未加 --force -> 直接返回，绝不重复下载或覆盖。 ... [cyctl] 选用产物: windows-amd64-17.0.5.tar.gz (temurin17)
+ok
+test_expected_hash_but_no_verdict_is_rejected (test_safety.TestProvisionSemantics.test_expected_hash_but_no_verdict_is_rejected)
+有期望哈希却拿到 None 结论 —— 等于校验被静默跳过，必须报错而非放行。 ... [cyctl] 选用产物: windows-amd64-17.0.5.tar.gz (temurin17)
+[cyctl] 下载代理: none -> 直连
+ok
+test_force_reinstalls_even_if_present (test_safety.TestProvisionSemantics.test_force_reinstalls_even_if_present) ... [cyctl] 选用产物: windows-amd64-17.0.5.tar.gz (temurin17)
+[cyctl] 下载代理: none -> 直连
+ok
+test_official_hash_match_installs (test_safety.TestProvisionSemantics.test_official_hash_match_installs) ... [cyctl] 选用产物: windows-amd64-17.0.5.tar.gz (temurin17)
+[cyctl] 下载代理: none -> 直连
+ok
+test_official_hash_mismatch_fails_hard (test_safety.TestProvisionSemantics.test_official_hash_mismatch_fails_hard) ... [cyctl] 选用产物: windows-amd64-17.0.5.tar.gz (temurin17)
+[cyctl] 下载代理: none -> 直连
+ok
+test_tofu_observed_match_proceeds (test_safety.TestProvisionSemantics.test_tofu_observed_match_proceeds)
+实测值与首次观测一致 -> 允许继续，并标注来源为 tofu-match。 ... [cyctl] 选用产物: windows-amd64-17.0.5.tar.gz (temurin17)
+[cyctl] 下载代理: none -> 直连
+[cyctl] 已与锁定文件中的 tofu_observed 基准一致
+ok
+test_unverified_artifact_is_blocked_by_default (test_safety.TestProvisionSemantics.test_unverified_artifact_is_blocked_by_default)
+无官方哈希且无 TOFU 基准 -> fail-closed，退出码 5，且不安装。 ... [cyctl] 选用产物: windows-amd64-17.0.5.tar.gz (temurin17)
+[cyctl] 下载代理: none -> 直连
+ok
+test_prune_dry_run_then_delete (test_safety.TestPrune.test_prune_dry_run_then_delete) ... ok
+test_demo_workflow_is_valid_and_uses_placeholder (test_safety.TestRunAndRestContract.test_demo_workflow_is_valid_and_uses_placeholder)
+示例工作流必须是合法 JSON、用 {input} 而非写死路径，且第一步声明 text/plain。 ... ok
+test_hash_inputs_marks_missing_without_raising (test_safety.TestRunAndRestContract.test_hash_inputs_marks_missing_without_raising)
+缺失的输入必须被标成 missing，而不是抛异常。 ... ok
+test_rest_exposes_accept (test_safety.TestRunAndRestContract.test_rest_exposes_accept) ... ok
+test_run_documents_placeholders (test_safety.TestRunAndRestContract.test_run_documents_placeholders) ... ok
+test_business_error_is_detected_even_with_http_200 (test_stability.TestConcurrentRequests.test_business_error_is_detected_even_with_http_200)
+HTTP 200 但响应体含 errors —— 必须判为失败，不能当成功。 ... ok
+test_concurrent_get_and_post_with_shared_server (test_stability.TestConcurrentRequests.test_concurrent_get_and_post_with_shared_server)
+GET 与 POST 混合并发，验证 opener 在不同方法间也不互相干扰。 ... ok
+test_shared_opener_does_not_mix_up_responses (test_stability.TestConcurrentRequests.test_shared_opener_does_not_mix_up_responses) ... ok
+test_engine_version_reads_cytoscape_version (test_stability.TestEngineVersionProbe.test_engine_version_reads_cytoscape_version) ... ok
+test_engine_version_returns_none_when_field_absent (test_stability.TestEngineVersionProbe.test_engine_version_returns_none_when_field_absent)
+端点在但字段缺失 -> 返回 None 而不是抛异常，由调用方决定怎么办。 ... ok
+test_version_info_flags_mismatch_loudly (test_stability.TestEngineVersionProbe.test_version_info_flags_mismatch_loudly)
+版本不一致必须给出可读警告 —— 静默通过等于埋雷。 ... ok
+test_version_info_reports_unreachable_engine (test_stability.TestEngineVersionProbe.test_version_info_reports_unreachable_engine) ... ok
+test_cli_never_returns_non_json_or_internal_error (test_stability.TestHostileInputs.test_cli_never_returns_non_json_or_internal_error) ... ok
+test_command_splitter_rejects_only_explicitly (test_stability.TestHostileInputs.test_command_splitter_rejects_only_explicitly)
+split_command 允许抛 ValueError，但不得抛别的异常。 ... ok
+test_command_to_post_handles_pathological_parameters (test_stability.TestHostileInputs.test_command_to_post_handles_pathological_parameters) ... ok
+test_empty_command_is_usage_error_not_internal (test_stability.TestHostileInputs.test_empty_command_is_usage_error_not_internal)
+空命令必须以 2（用法错误）结束，绝不能是 1（内部未捕获异常）。 ... ok
+test_describe_is_byte_identical_across_runs (test_stability.TestIdempotency.test_describe_is_byte_identical_across_runs) ... ok
+test_mcp_matrix_is_byte_identical_across_runs (test_stability.TestIdempotency.test_mcp_matrix_is_byte_identical_across_runs) ... ok
+test_provision_is_idempotent_when_already_installed (test_stability.TestIdempotency.test_provision_is_idempotent_when_already_installed) ... ok
+test_repeated_status_on_dead_port_is_stable (test_stability.TestIdempotency.test_repeated_status_on_dead_port_is_stable) ... ok
+test_write_config_is_idempotent (test_stability.TestIdempotency.test_write_config_is_idempotent) ... ok
+test_binary_view_export_is_byte_exact_and_repeatable (test_stability.TestLiveEngine.test_binary_view_export_is_byte_exact_and_repeatable)
+★ 视图导出的 PNG 必须字节精确，且同视图两次导出字节完全相同。 ... <local-path>:882: ResourceWarning: unclosed file <_io.BufferedReader name='C:\\Users\\35680\\AppData\\Local\\Temp\\tmpf9reb4jb\\v0.png'>
+  raw = open(dest, "rb").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<local-path>:882: ResourceWarning: unclosed file <_io.BufferedReader name='C:\\Users\\35680\\AppData\\Local\\Temp\\tmpf9reb4jb\\v1.png'>
+  raw = open(dest, "rb").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_concurrent_commands_against_live_engine (test_stability.TestLiveEngine.test_concurrent_commands_against_live_engine)
+真实引擎上的并发：每条命令的响应必须与自己的请求对应。 ... ok
+test_engine_reports_version (test_stability.TestLiveEngine.test_engine_reports_version)
+版本在 /v1/version，不在根端点 /v1/。 ... ok
+test_engine_version_matches_lock (test_stability.TestLiveEngine.test_engine_version_matches_lock)
+★ 引擎实际版本必须等于 versions.lock.json 的 pinned。 ... ok
+test_import_sample_network_gives_expected_counts (test_stability.TestLiveEngine.test_import_sample_network_gives_expected_counts)
+★ 导入官方示例网络，节点/边数必须是 330 / 359。 ... ok
+test_mcp_endpoint_probe_is_classified (test_stability.TestLiveEngine.test_mcp_endpoint_probe_is_classified)
+MCP 端点：可用则校验工具列表；未安装 MCP App 则必须给出 404 提示。 ... ok
+test_mcp_initialize_returns_session_and_version (test_stability.TestLiveEngine.test_mcp_initialize_returns_session_and_version)
+★ 会话握手：必须拿到 Mcp-Session-Id 与 protocolVersion。 ... ok
+test_mcp_tools_call_readonly_schema_fetch (test_stability.TestLiveEngine.test_mcp_tools_call_readonly_schema_fetch)
+tools/call 调**只读**工具，必须真的拿到命令 schema。 ... ok
+test_mcp_tools_list_is_nonempty (test_stability.TestLiveEngine.test_mcp_tools_list_is_nonempty)
+tools/list 必须返回工具，且含命令网关三件套。 ... ok
+test_network_list_returns_networks_array (test_stability.TestLiveEngine.test_network_list_returns_networks_array)
+network list 的真实返回是 {"data":{"networks":[...]},"errors":[]}。 ... ok
+test_reimport_of_same_file_gives_identical_counts (test_stability.TestLiveEngine.test_reimport_of_same_file_gives_identical_counts)
+★ 同一文件重复导入，规模必须完全一致（确定性，与网络 SUID 无关）。 ... ok
+test_rest_function_endpoint (test_stability.TestLiveEngine.test_rest_function_endpoint) ... ok
+test_root_endpoint_has_no_version_field (test_stability.TestLiveEngine.test_root_endpoint_has_no_version_field)
+把「根端点不含版本」这件事锁死，防止将来又从这里取版本。 ... ok
+test_same_command_twice_gives_identical_fingerprint (test_stability.TestLiveEngine.test_same_command_twice_gives_identical_fingerprint)
+★ 结果确定性：同一条命令两次调用的结果指纹必须完全相同。 ... ok
+test_unknown_command_is_reported_not_silently_ignored (test_stability.TestLiveEngine.test_unknown_command_is_reported_not_silently_ignored)
+未知命令必须报错。若引擎返回 200 且为空，说明命令被静默忽略了。 ... ok
+test_auto_falls_back_to_system_proxy_when_direct_fails (test_stability.TestProxyPolicy.test_auto_falls_back_to_system_proxy_when_direct_fails) ... ok
+test_auto_mode_is_a_sentinel_not_a_value (test_stability.TestProxyPolicy.test_auto_mode_is_a_sentinel_not_a_value)
+auto 必须返回 None（待探测），绝不能在这里就把系统代理塞进去。 ... ok
+test_auto_prefers_direct_even_when_registry_proxy_exists (test_stability.TestProxyPolicy.test_auto_prefers_direct_even_when_registry_proxy_exists)
+★ 核心回归：直连可达时必须直连。 ... ok
+test_auto_without_any_proxy_reports_direct_unverified (test_stability.TestProxyPolicy.test_auto_without_any_proxy_reports_direct_unverified) ... ok
+test_download_default_is_direct_not_system (test_stability.TestProxyPolicy.test_download_default_is_direct_not_system)
+不传 proxies 时必须是直连 —— 这是「不再静默走注册表代理」的保证。 ... [cyctl] 下载 http://x/y（第 1/1 次）
+[cyctl] 下载失败（第 1/1 次）：<urlopen error stop here>
+ok
+test_download_installs_exactly_the_given_proxies (test_stability.TestProxyPolicy.test_download_installs_exactly_the_given_proxies)
+_download 必须把调用方给的 proxies 装进 ProxyHandler，不得自作主张。 ... [cyctl] 下载 http://x/y（第 1/1 次）
+[cyctl] 下载失败（第 1/1 次）：<urlopen error stop here>
+ok
+test_env_mode_reads_environment_only (test_stability.TestProxyPolicy.test_env_mode_reads_environment_only) ... ok
+test_explicit_url_overrides_mode (test_stability.TestProxyPolicy.test_explicit_url_overrides_mode) ... ok
+test_none_mode_is_direct (test_stability.TestProxyPolicy.test_none_mode_is_direct) ... ok
+test_probe_uses_range_not_head (test_stability.TestProxyPolicy.test_probe_uses_range_not_head)
+部分 CDN 对 HEAD 返回 405 但对 Range GET 正常；用 HEAD 会误判不可达。 ... ok
+test_system_mode_reads_system_settings (test_stability.TestProxyPolicy.test_system_mode_reads_system_settings) ... ok
+test_no_handle_leak_over_many_requests (test_stability.TestResourceStability.test_no_handle_leak_over_many_requests) ... skipped '本平台无法读取句柄数'
+test_no_unbounded_memory_growth (test_stability.TestResourceStability.test_no_unbounded_memory_growth)
+用 tracemalloc 观测 Python 侧分配，300 次请求后不得持续线性增长。 ... ok
+
+----------------------------------------------------------------------
+Ran 187 tests in 207.479s
+
+OK (skipped=1)
+EXIT=0

@@ -1,0 +1,31 @@
+# 全仓库统一 LF。
+#
+# 为什么必须显式声明：本项目的所有源文件与文档都要求 UTF-8 + LF（无 CRLF、无 BOM），
+# 并有一条测试逐文件二进制检查。Windows 上 core.autocrlf 默认可能是 true，
+# 那会在 checkout 时把 LF 转成 CRLF，让该不变式在克隆后静默失效。
+* text=auto eol=lf
+
+# 网络数据文件按**字节**锁死，不做任何行尾转换。
+# 理由：导出基线是要拿 sha256 逐字节比对的，而行尾取决于写盘路径 ——
+# 官方 galFiltered.sif 是 LF，Cytoscape 在 Windows 上导出的 .sif 是 CRLF。
+# 上面的 * text=auto eol=lf 会把 CRLF 转成 LF，克隆后基线哈希立刻失效。
+*.sif -text
+
+# 「上游原样字节」的证据文件也按**字节**锁死。
+# 理由：这类文件的全部价值就在于「它就是引擎返回的那串字节」。
+# 实测引擎在 Windows 上返回 swagger.json 时用 CRLF（"{\r\n  \"swagger\"..."），
+# 若被上面的 * text=auto 洗成 LF，仓库里存的就不是引擎的返回，
+# 报告的「原样上游字节」成了假话，tools/package.py 里那条带理由的豁免也失去依据。
+# 注意：只锁这一个文件，不要整目录通配 —— evidence/ 下其余 JSON 是我们自己生成的
+# 产物，按仓库统一约定走 LF。
+cytoscape-agent-skill/evidence/engine-swagger-3.10.5.json -text
+
+# 二进制产物不参与行尾转换
+*.png binary
+*.jpg binary
+*.jar binary
+*.exe binary
+*.dmg binary
+*.zip binary
+*.tar.gz binary
+*.tgz binary

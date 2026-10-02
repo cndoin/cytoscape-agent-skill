@@ -1,0 +1,62 @@
+{
+  "question": "同一引擎版本的 swagger.json 是否字节可复现？",
+  "answer": "否。语义可复现（路径集合与操作数一致），字节不可复现。",
+  "snapshot": {
+    "file": "evidence\\engine-swagger-3.10.5.json",
+    "bytes": 252662,
+    "sha256": "d1158d5296567c789f2f99a0d780def45b6e4422e43b968c6b3807d21d2b6b9c",
+    "cr": 6636,
+    "lf": 6636
+  },
+  "refetch": {
+    "file": ".cache\\fresh-swagger.json",
+    "bytes": 252666,
+    "sha256": "bd5db0e651459559443959b78c2d7815253247725e85cc6cde063e19f12e4fb2",
+    "cr": 6636,
+    "lf": 6636
+  },
+  "byte_diff": {
+    "total_differing_offsets": 206636,
+    "first_offset": 2947,
+    "size_delta_bytes": 4
+  },
+  "invariant": {
+    "paths": 119,
+    "paths_equal_as_set": true,
+    "operations": 171,
+    "operations_refetch": 171,
+    "tags_array": 18,
+    "tags_used_by_operations": 17,
+    "tags_declared_but_unused": [
+      "Visual Properties"
+    ]
+  },
+  "differences": [
+    {
+      "class": "路径顺序",
+      "detail": "paths 对象的键序不同；首个不同下标 = 1",
+      "snapshot_head": [
+        "/aMatReader/v1/import",
+        "/aMatReader/v1/predictParameters",
+        "/aMatReader/v1/extend/{networkSUID}"
+      ],
+      "refetch_head": [
+        "/aMatReader/v1/import",
+        "/aMatReader/v1/extend/{networkSUID}",
+        "/aMatReader/v1/predictParameters"
+      ]
+    },
+    {
+      "class": "operationId 去重后缀归属",
+      "detail": "内容不同的路径共 4 条",
+      "paths": [
+        "/diffusion/v1/currentView/diffuse_with_options",
+        "/diffusion/v1/{networkSUID}/views/{networkViewSUID}/diffuse_with_options",
+        "/v1/commands",
+        "/v1/commands/{namespace}"
+      ]
+    }
+  ],
+  "conclusion": "该快照仅用于离线读取顺序无关的事实（路径集合 / 操作数 / tag 覆盖）；不得以其 sha256 作为回归基准。",
+  "reading_hint": "byte_diff.total_differing_offsets 会被「路径顺序位移」放大（一处键序变化会让其后所有字节逐位错开），因此它**不代表有 20 万个独立差异**。要判断差异规模，看 byte_diff.size_delta_bytes（= 4，来自 operationId 去重后缀换边）与 differences[].paths（真正内容不同的只有 4 条路径）。这也正是不能用「字节相同」来判定 swagger 是否变化的原因。"
+}

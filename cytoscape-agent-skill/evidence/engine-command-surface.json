@@ -1,0 +1,319 @@
+{
+  "base_url": "http://127.0.0.1:1234/v1",
+  "source": "Commands API help endpoints (Accept: text/plain)",
+  "namespace_count": 23,
+  "command_count": 195,
+  "failed_namespaces": [],
+  "namespaces": {
+    "analyzer": {
+      "count": 4,
+      "commands": [
+        "analyze",
+        "remove duplicated edges",
+        "remove self loops",
+        "version"
+      ]
+    },
+    "annotation": {
+      "count": 13,
+      "commands": [
+        "add bounded text",
+        "add image",
+        "add shape",
+        "add text",
+        "delete",
+        "group",
+        "list",
+        "ungroup",
+        "update bounded text",
+        "update group",
+        "update image",
+        "update shape",
+        "update text"
+      ]
+    },
+    "apps": {
+      "count": 13,
+      "commands": [
+        "disable",
+        "enable",
+        "information",
+        "install",
+        "list available",
+        "list disabled",
+        "list installed",
+        "list uninstalled",
+        "list updates",
+        "open appstore",
+        "status",
+        "uninstall",
+        "update"
+      ]
+    },
+    "command": {
+      "count": 5,
+      "commands": [
+        "echo",
+        "pause",
+        "quit",
+        "run",
+        "sleep"
+      ]
+    },
+    "cybrowser": {
+      "count": 8,
+      "commands": [
+        "close",
+        "dialog",
+        "hide",
+        "list",
+        "native",
+        "send",
+        "show",
+        "version"
+      ]
+    },
+    "cychart": {
+      "count": 3,
+      "commands": [
+        "histogram",
+        "scatter",
+        "version"
+      ]
+    },
+    "diffusion": {
+      "count": 2,
+      "commands": [
+        "diffuse",
+        "diffuse_advanced"
+      ]
+    },
+    "edge": {
+      "count": 10,
+      "commands": [
+        "create attribute",
+        "get",
+        "get attribute",
+        "get properties",
+        "list",
+        "list attributes",
+        "list properties",
+        "rename",
+        "set attribute",
+        "set properties"
+      ]
+    },
+    "enhancedGraphics": {
+      "count": 2,
+      "commands": [
+        "list",
+        "version"
+      ]
+    },
+    "enrichment": {
+      "count": 1,
+      "commands": [
+        "analysis"
+      ]
+    },
+    "filetransfer": {
+      "count": 7,
+      "commands": [
+        "fromSandbox",
+        "getFileInfo",
+        "removeFile",
+        "removeSandbox",
+        "setSandbox",
+        "toSandbox",
+        "urlToSandbox"
+      ]
+    },
+    "filter": {
+      "count": 9,
+      "commands": [
+        "apply",
+        "create",
+        "delete",
+        "export",
+        "get",
+        "import",
+        "list",
+        "rename",
+        "select"
+      ]
+    },
+    "group": {
+      "count": 9,
+      "commands": [
+        "add",
+        "collapse",
+        "create",
+        "expand",
+        "get",
+        "list",
+        "remove",
+        "rename",
+        "ungroup"
+      ]
+    },
+    "idmapper": {
+      "count": 1,
+      "commands": [
+        "map column"
+      ]
+    },
+    "layout": {
+      "count": 20,
+      "commands": [
+        "apply preferred",
+        "attribute-circle",
+        "attribute-grid",
+        "attributes-layout",
+        "circular",
+        "copycat",
+        "cose",
+        "degree-circle",
+        "force-directed",
+        "force-directed-cl",
+        "fruchterman-rheingold",
+        "get preferred",
+        "grid",
+        "hierarchical",
+        "isom",
+        "kamada-kawai",
+        "rotate",
+        "scale",
+        "set preferred",
+        "stacked-node-layout"
+      ]
+    },
+    "mapSourceAndTarget": {
+      "count": 1,
+      "commands": [
+        "map"
+      ]
+    },
+    "ndex": {
+      "count": 5,
+      "commands": [
+        "create network",
+        "download network",
+        "list profiles",
+        "search networks",
+        "update network"
+      ]
+    },
+    "network": {
+      "count": 31,
+      "commands": [
+        "add",
+        "add edge",
+        "add node",
+        "clone",
+        "connect nodes",
+        "create",
+        "create attribute",
+        "create empty",
+        "delete",
+        "deselect",
+        "destroy",
+        "export",
+        "get",
+        "get attribute",
+        "get properties",
+        "hide",
+        "import file",
+        "import url",
+        "list",
+        "list attributes",
+        "list properties",
+        "load file",
+        "load url",
+        "merge",
+        "rename",
+        "select",
+        "select subnetwork",
+        "set attribute",
+        "set current",
+        "set properties",
+        "show"
+      ]
+    },
+    "node": {
+      "count": 11,
+      "commands": [
+        "create attribute",
+        "get",
+        "get attribute",
+        "get properties",
+        "list",
+        "list attributes",
+        "list properties",
+        "rename",
+        "select from file",
+        "set attribute",
+        "set properties"
+      ]
+    },
+    "session": {
+      "count": 4,
+      "commands": [
+        "new",
+        "open",
+        "save",
+        "save as"
+      ]
+    },
+    "table": {
+      "count": 19,
+      "commands": [
+        "add row",
+        "create column",
+        "create table",
+        "delete column",
+        "delete row",
+        "destroy",
+        "export",
+        "get column",
+        "get row",
+        "get value",
+        "import file",
+        "import url",
+        "list",
+        "list columns",
+        "list rows",
+        "merge",
+        "rename column",
+        "set title",
+        "set values"
+      ]
+    },
+    "view": {
+      "count": 14,
+      "commands": [
+        "create",
+        "destroy",
+        "export",
+        "export jpg",
+        "export pdf",
+        "export png",
+        "export ps",
+        "export svg",
+        "fit content",
+        "fit selected",
+        "get current",
+        "list",
+        "set current",
+        "update"
+      ]
+    },
+    "vizmap": {
+      "count": 3,
+      "commands": [
+        "apply",
+        "export",
+        "load file"
+      ]
+    }
+  }
+}

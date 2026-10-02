@@ -1,0 +1,18 @@
+# 运行时产物：引擎、下载缓存、PID、日志、溯源清单
+runtime/
+runs/
+baselines/
+# 审计用的第三方取包缓存（wheel 不 vendor）
+.cache/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

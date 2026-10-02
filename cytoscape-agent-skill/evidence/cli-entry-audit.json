@@ -1,0 +1,353 @@
+{
+  "contract": {
+    "exit_codes": [
+      0,
+      2,
+      3,
+      4,
+      5
+    ],
+    "stdout": "恰好一个 JSON 对象"
+  },
+  "engine_port": 1234,
+  "engine_was_up": true,
+  "cases": [
+    {
+      "label": "env",
+      "argv": [
+        "env"
+      ],
+      "want": [
+        0
+      ]
+    },
+    {
+      "label": "describe",
+      "argv": [
+        "describe"
+      ],
+      "want": [
+        0
+      ]
+    },
+    {
+      "label": "doctor",
+      "argv": [
+        "doctor"
+      ],
+      "want": [
+        0,
+        3
+      ]
+    },
+    {
+      "label": "discover",
+      "argv": [
+        "discover"
+      ],
+      "want": [
+        0,
+        3
+      ]
+    },
+    {
+      "label": "status",
+      "argv": [
+        "status"
+      ],
+      "want": [
+        0,
+        3
+      ]
+    },
+    {
+      "label": "wait",
+      "argv": [
+        "wait",
+        "--timeout",
+        "60"
+      ],
+      "want": [
+        0,
+        3
+      ]
+    },
+    {
+      "label": "cmd 正常",
+      "argv": [
+        "cmd",
+        "network list"
+      ],
+      "want": [
+        0,
+        3
+      ]
+    },
+    {
+      "label": "cmd GET",
+      "argv": [
+        "cmd",
+        "layout get preferred",
+        "--get"
+      ],
+      "want": [
+        0,
+        3
+      ]
+    },
+    {
+      "label": "cmd 空串",
+      "argv": [
+        "cmd",
+        ""
+      ],
+      "want": [
+        2
+      ]
+    },
+    {
+      "label": "cmd 全空白",
+      "argv": [
+        "cmd",
+        "   "
+      ],
+      "want": [
+        2
+      ]
+    },
+    {
+      "label": "rest 正常",
+      "argv": [
+        "rest",
+        "GET",
+        "networks"
+      ],
+      "want": [
+        0,
+        3
+      ]
+    },
+    {
+      "label": "rest text/plain",
+      "argv": [
+        "rest",
+        "GET",
+        "commands",
+        "--accept",
+        "text/plain"
+      ],
+      "want": [
+        0,
+        3
+      ]
+    },
+    {
+      "label": "rest 坏 JSON body",
+      "argv": [
+        "rest",
+        "POST",
+        "networks",
+        "--body",
+        "{oops"
+      ],
+      "want": [
+        2
+      ]
+    },
+    {
+      "label": "rest 坏 --param",
+      "argv": [
+        "rest",
+        "GET",
+        "networks",
+        "--param",
+        "noequals"
+      ],
+      "want": [
+        2
+      ]
+    },
+    {
+      "label": "rest 空 operation",
+      "argv": [
+        "rest",
+        "GET",
+        ""
+      ],
+      "want": [
+        0,
+        3
+      ]
+    },
+    {
+      "label": "commands 列命名空间",
+      "argv": [
+        "commands"
+      ],
+      "want": [
+        0,
+        3
+      ]
+    },
+    {
+      "label": "commands 列一ns",
+      "argv": [
+        "commands",
+        "network"
+      ],
+      "want": [
+        0,
+        3
+      ]
+    },
+    {
+      "label": "commands 查一cmd",
+      "argv": [
+        "commands",
+        "network",
+        "export"
+      ],
+      "want": [
+        0,
+        3
+      ]
+    },
+    {
+      "label": "commands 危险命令",
+      "argv": [
+        "commands",
+        "command",
+        "quit"
+      ],
+      "want": [
+        2
+      ]
+    },
+    {
+      "label": "commands 执行需参数",
+      "argv": [
+        "commands",
+        "network",
+        "export",
+        "--allow-execute"
+      ],
+      "want": [
+        0,
+        3
+      ]
+    },
+    {
+      "label": "mcp",
+      "argv": [
+        "mcp"
+      ],
+      "want": [
+        0
+      ]
+    },
+    {
+      "label": "bridge --probe",
+      "argv": [
+        "bridge",
+        "--probe"
+      ],
+      "want": [
+        0,
+        3
+      ]
+    },
+    {
+      "label": "prune dry-run",
+      "argv": [
+        "prune"
+      ],
+      "want": [
+        0
+      ]
+    },
+    {
+      "label": "run 工作流",
+      "argv": [
+        "run",
+        "workflows/demo.workflow.json"
+      ],
+      "want": [
+        0,
+        3,
+        4
+      ]
+    },
+    {
+      "label": "provision 只下载态",
+      "argv": [
+        "provision",
+        "--component",
+        "jre"
+      ],
+      "want": [
+        0,
+        5
+      ]
+    },
+    {
+      "label": "--version",
+      "argv": [
+        "--version"
+      ],
+      "want": [
+        0
+      ]
+    },
+    {
+      "label": "--help",
+      "argv": [
+        "--help"
+      ],
+      "want": [
+        0,
+        2
+      ]
+    },
+    {
+      "label": "无参数",
+      "argv": [],
+      "want": [
+        2
+      ]
+    },
+    {
+      "label": "未知子命令",
+      "argv": [
+        "frobnicate"
+      ],
+      "want": [
+        2
+      ]
+    },
+    {
+      "label": "stop 空端口(幂等)",
+      "argv": [
+        "stop",
+        "--port",
+        "{free}"
+      ],
+      "want": [
+        0
+      ]
+    },
+    {
+      "label": "start 端口占用检测",
+      "argv": [
+        "start",
+        "--port",
+        "{busy}"
+      ],
+      "want": [
+        0,
+        3
+      ]
+    }
+  ],
+  "skipped": [],
+  "failures": []
+}

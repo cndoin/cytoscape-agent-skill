@@ -1,0 +1,35 @@
+{
+  "_comment": [
+    "cyctl run 的工作流示例。",
+    "输入是 Cytoscape 官方示例网络 galFiltered.sif（330 节点 / 359 边），随包自带。",
+    "把 inputs 换成你自己的本地文件路径——不要用远端 URL，否则结果不可复现（见 docs/02 §2.2）。",
+    "命令字符串写法与 Cytoscape 命令行对话框完全一致。",
+    "network=SUID:52 这种参数里的 SUID 每次会话都会变，正式工作流请用网络名或先查询再填充。"
+  ],
+  "name": "demo-import-layout-export",
+  "inputs": [
+    "../data/galFiltered.sif"
+  ],
+  "steps": [
+    {
+      "_note": "先查一遍引擎里有哪几个命令命名空间，确认环境符合预期。注意 accept=text/plain：help 类端点只接受纯文本，发 json 会 406",
+      "rest": { "method": "GET", "operation": "commands", "accept": "text/plain" }
+    },
+    {
+      "_note": "读取当前首选布局算法。真实命令名是 get preferred —— layout 命名空间下并没有 getLayoutNames；命令名必须先查（cyctl commands layout），不能猜。这里刻意不调 force-directed：力导向布局是随机的，不适合放进确定性示例",
+      "command": "layout get preferred"
+    },
+    {
+      "_note": "导入网络",
+      "command": "network import file file=\"{input}\""
+    },
+    {
+      "_note": "确认导入结果",
+      "rest": { "method": "GET", "operation": "networks" }
+    },
+    {
+      "_note": "查看可用可视化样式",
+      "rest": { "method": "GET", "operation": "styles" }
+    }
+  ]
+}

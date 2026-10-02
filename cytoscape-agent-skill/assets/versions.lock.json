@@ -1,0 +1,225 @@
+{
+  "schema": "cyctl/versions.lock/v2",
+  "generated_at": "2026-10-01",
+  "_comment": [
+    "版本锁定的目的：医学/生信场景下，引擎版本变化会改变算法输出。",
+    "cyctl 只允许使用此处固定的版本；任何升级都必须显式改动本文件并重新跑回归。",
+    "",
+    "v2 相对 v1 的新增（均为向后兼容的附加字段）：",
+    "  * 每个产物增加 arch 字段（x64 / aarch64），供多架构选型；",
+    "  * 补录官方清单中此前遗漏的 macos x64 dmg 哈希；",
+    "  * 新增 support_matrix，如实说明「哪些平台/架构官方根本没提供产物」；",
+    "  * 新增 engine_modes，说明三种引擎来源及其确定性差异。",
+    "",
+    "sha256 来源分级：",
+    "  official  = 取自官方 release assets 中的 sha256sums 清单（发布方签名产物），可信任；",
+    "  tofu      = 官方未提供该归档的哈希清单，需在首次下载后人工核对并回填（Trust-On-First-Use）；",
+    "  null      = 官方未提供任何哈希。",
+    "tofu_observed 字段记录「首次下载实测到的 sha256」，用于后续下载的一致性比对；",
+    "它来自本机一次下载，**未经官方清单交叉验证**，不等于可信哈希 —— 它的作用是",
+    "防止同一产物在后续下载中被悄悄替换，而不是证明首次下载未被污染。",
+    "provision 的默认策略是 fail-closed：sha256 为空且无 tofu_observed 匹配时一律阻断",
+    "（退出码 5），必须显式加 --allow-unverified 才安装。"
+  ],
+  "pinned": {
+    "cytoscape": "3.10.5",
+    "jre": "17.0.5",
+    "jre_required_major": 17
+  },
+  "release_base": "https://github.com/cytoscape/cytoscape/releases/download/3.10.5/",
+  "jre_base": "https://cytoscape-builds.ucsd.edu/cytoscape-builds/jres/",
+  "engine_modes": {
+    "bundled": {
+      "desc": "由 cyctl provision 下载到 runtime/ 的引擎。版本被本文件锁定，结果可复现。",
+      "determinism": "最高：版本、JRE、App 集合都在掌控内。",
+      "cost": "约 580 MB（Cytoscape 约 350 MB + JRE 约 42 MB，解压后更大）。"
+    },
+    "system": {
+      "desc": "复用机器上已安装的 Cytoscape（cyctl discover 可探测）。",
+      "determinism": "中：版本取决于用户装的是什么，可能与 pinned 不一致。",
+      "cost": "0 字节下载。",
+      "caution": "用 system 引擎跑出的结果，其版本必须记入溯源清单；跨机比对前先核对版本。"
+    },
+    "attach": {
+      "desc": "连接一个已在运行的 Cytoscape 实例（不启动新进程）。",
+      "determinism": "取决于该实例的版本与已加载 App。",
+      "cost": "0。",
+      "use_when": "桌面用户手工开着 Cytoscape，想让 Agent 直接接管。"
+    }
+  },
+  "support_matrix": {
+    "_comment": "如实记录官方发布了什么。没有产物 = 只能走 system 引擎或自行编译，不要假装能下载。",
+    "windows": {
+      "x64": {
+        "official_installer": "Cytoscape_3_10_5_windows_64bit.exe（有官方 sha256）",
+        "official_archive": null,
+        "unofficial_archive": "cytoscape-windows-3.10.5.zip（无官方哈希）",
+        "jre": "官方提供 windows-amd64-17.0.5.tar.gz（无官方哈希，TOFU）"
+      },
+      "aarch64": {
+        "official_installer": null,
+        "note": "官方未发布 Windows ARM64 产物。ARM64 Windows 上请用 system 引擎（x64 仿真）。"
+      }
+    },
+    "linux": {
+      "x64": {
+        "official_installer": "Cytoscape_3_10_5_unix.sh（有官方 sha256）",
+        "official_archive": null,
+        "unofficial_archive": "cytoscape-unix-3.10.5.tar.gz（无官方哈希）",
+        "jre": null
+      },
+      "aarch64": {
+        "official_installer": null,
+        "note": "官方未发布 Linux ARM64 产物。请用 system 引擎（发行版仓库/自行构建）。"
+      }
+    },
+    "macos": {
+      "x64": {
+        "official_installer": "Cytoscape_3_10_5_macos_x64.dmg（有官方 sha256）",
+        "unofficial_archive": "cytoscape-unix-3.10.5.tar.gz（无官方哈希）",
+        "jre": null
+      },
+      "aarch64": {
+        "official_installer": "Cytoscape_3_10_5_macos_aarch64.dmg（有官方 sha256）",
+        "unofficial_archive": "cytoscape-unix-3.10.5.tar.gz（无官方哈希）",
+        "jre": "官方提供 macos-aarch64-17.0.5.tar.gz（无官方哈希，TOFU）"
+      }
+    }
+  },
+  "artifacts": {
+    "cytoscape": {
+      "windows": [
+        {
+          "variant": "installer",
+          "kind": "installer",
+          "arch": "x64",
+          "file": "Cytoscape_3_10_5_windows_64bit.exe",
+          "size_mb": 226.6,
+          "sha256": "cc6316c9e6dbf35ef468d2e5ef4ead6de1a665f76abfb15db31300097aba424f",
+          "sha256_source": "official",
+          "md5": "efe1a589d609fdc06fc8e340daa7bacb",
+          "install_args": [
+            "-q",
+            "-dir",
+            "<target>",
+            "-overwrite"
+          ],
+          "note": "install4j 静默安装；-q 采用全部默认项。需要管理员权限写入非用户目录。"
+        },
+        {
+          "variant": "archive",
+          "kind": "archive",
+          "arch": "x64",
+          "file": "cytoscape-windows-3.10.5.zip",
+          "size_mb": 348.6,
+          "sha256": null,
+          "sha256_source": "null",
+          "note": "官方 sha256sums 只覆盖安装包，未覆盖 zip 归档 → 无法强校验。",
+          "tofu_observed": "79c6668abb96bfe3750a53293f950544bdbe879f55d7108a3e3bf1f99eeef615",
+          "tofu_observed_at": "2026-10-01",
+          "tofu_observed_size_bytes": 365495642,
+          "tofu_observed_note": "本机 2026-10-01 真实下载实测值。官方 sha256sums 不覆盖 zip 归档，故无法与官方交叉验证；该值用于后续下载的一致性比对（防替换），不证明首次下载未被污染。如需强校验，请改用同平台的 installer 变体（有官方 sha256）。"
+        }
+      ],
+      "linux": [
+        {
+          "variant": "installer",
+          "kind": "installer",
+          "arch": "x64",
+          "file": "Cytoscape_3_10_5_unix.sh",
+          "size_mb": 232.5,
+          "sha256": "e9d97c59a52d59b15f9e91a46d4df6b089fd896b54dbc9c36c8799a35b3082e2",
+          "sha256_source": "official",
+          "md5": "b3296a07f7407d92b942414933416774",
+          "install_args": [
+            "-q",
+            "-dir",
+            "<target>",
+            "-overwrite"
+          ],
+          "note": "自解压 shell 安装包，支持 -q 静默。"
+        },
+        {
+          "variant": "archive",
+          "kind": "archive",
+          "arch": "x64",
+          "file": "cytoscape-unix-3.10.5.tar.gz",
+          "size_mb": 347.5,
+          "sha256": null,
+          "sha256_source": "null",
+          "note": "解压即用（保留 POSIX 可执行位），但无官方哈希。"
+        }
+      ],
+      "macos": [
+        {
+          "variant": "archive",
+          "kind": "archive",
+          "arch": "x64",
+          "file": "cytoscape-unix-3.10.5.tar.gz",
+          "size_mb": 347.5,
+          "sha256": null,
+          "sha256_source": "null",
+          "note": "macOS 与 Linux 共用 unix 归档。Apple Silicon 需自备 aarch64 JDK 17。"
+        },
+        {
+          "variant": "dmg-aarch64",
+          "kind": "installer",
+          "arch": "aarch64",
+          "file": "Cytoscape_3_10_5_macos_aarch64.dmg",
+          "size_mb": 225.3,
+          "sha256": "0182e1551e19ba332c76e673bf618f2106f5655c8b2e1b09deb1706d2bc35a0d",
+          "sha256_source": "official",
+          "note": "DMG 无法在命令行静默安装，仅登记哈希备查；GUI 双击安装或改用 unix 归档。"
+        },
+        {
+          "variant": "dmg-x64",
+          "kind": "installer",
+          "arch": "x64",
+          "file": "Cytoscape_3_10_5_macos_x64.dmg",
+          "sha256": "9efd8f93e6ad97c90ae9baa647cfe3b5a4b81cb80e4286cc927b5cf731d137ac",
+          "sha256_source": "official",
+          "note": "同上：仅登记哈希备查。Intel Mac 用户可用。"
+        }
+      ]
+    },
+    "jre": {
+      "windows": [
+        {
+          "variant": "temurin17",
+          "kind": "archive",
+          "arch": "x64",
+          "file": "windows-amd64-17.0.5.tar.gz",
+          "size_mb": 41.7,
+          "sha256": null,
+          "sha256_source": "tofu",
+          "tofu_observed": "ea2db19a421ad1aabb53560c148498fa8eeaa029aa86e608ba186f20f809727d",
+          "tofu_observed_at": "2026-10-01",
+          "tofu_observed_size_bytes": 43772552,
+          "tofu_observed_note": "本机首次下载实测值。已确认官方 jres/ 目录不提供 sha256/md5 清单（探测返回 404），故无法与官方交叉验证；请人工核对后把该值填到 sha256 字段。",
+          "note": "来自官方 cytoscape-builds.ucsd.edu/jres/。首次下载后请核对并回填 sha256。"
+        }
+      ],
+      "macos": [
+        {
+          "variant": "temurin17",
+          "kind": "archive",
+          "arch": "aarch64",
+          "file": "macos-aarch64-17.0.5.tar.gz",
+          "sha256": null,
+          "sha256_source": "tofu"
+        }
+      ],
+      "linux": []
+    }
+  },
+  "notes": {
+    "linux_jre": "官方 jres/ 目录未提供 linux 包。Linux 上请通过系统包管理器安装 OpenJDK 17（如 apt install openjdk-17-jdk），或设置 JAVA_HOME 指向已有 JDK 17。",
+    "gui_requirement": "Cytoscape Desktop 是 GUI 应用。官方 headless-cmdline-parser-impl 只提供 -h / -v / -c <命令文件>，**没有** -N 之类的无头开关；无显示器的 Linux 需 xvfb-run（cyctl start --headless 会自动包装）。",
+    "upgrade_policy": "升级引擎版本 = 变更算法输出。必须：1) 改本文件 pinned；2) 重跑 tests/；3) 用同一组输入比对 result_sha256 是否变化并记录。",
+    "integrity_policy": "官方 sha256sums 只覆盖 4 个安装包（macOS dmg x2 / unix.sh / windows.exe），tar.gz 与 zip 归档、官方 JRE 全都没有哈希。provision 对无哈希产物默认阻断（退出码 5），需 --allow-unverified 显式放行。",
+    "proxy_policy": "下载外网资源默认走环境代理（可 --no-proxy 关闭）；CyREST 请求永远直连、显式绕过代理 —— 本机若设了 http_proxy，代理会把 localhost 请求劫持并返回 502。",
+    "cache_policy": "下载归档缓存在 runtime/_downloads，长期运行会累积数百 MB。用 cyctl prune（默认 dry-run，--yes 才删除）清理。",
+    "engine_selection": "三种引擎来源见 engine_modes。默认 --engine auto：有自带就用自带（确定性最高），没有则回落系统安装。",
+    "arch_note": "x64 与 aarch64 的可用性见 support_matrix。官方只为 macOS 提供了 aarch64 产物；Windows/Linux 的 ARM64 需走 system 引擎。"
+  }
+}

@@ -1,0 +1,757 @@
+{
+  "package": "py4cytoscape",
+  "version": "1.13.0",
+  "source_wheel": "py4cytoscape-1.13.0-py3-none-any.whl",
+  "extraction": "AST（不执行代码）",
+  "module_count": 35,
+  "function_total": 470,
+  "modules": {
+    "py4cytoscape/_version.py": {
+      "function_count": 0,
+      "functions": [],
+      "constants": []
+    },
+    "py4cytoscape/annotations.py": {
+      "function_count": 13,
+      "functions": [
+        "add_annotation_text",
+        "add_annotation_bounded_text",
+        "add_annotation_image",
+        "add_annotation_shape",
+        "delete_annotation",
+        "get_annotation_list",
+        "group_annotation",
+        "ungroup_annotation",
+        "update_annotation_text",
+        "update_annotation_bounded_text",
+        "update_annotation_shape",
+        "update_annotation_image",
+        "update_group_annotation"
+      ],
+      "constants": []
+    },
+    "py4cytoscape/apps.py": {
+      "function_count": 13,
+      "functions": [
+        "disable_app",
+        "enable_app",
+        "get_app_information",
+        "install_app",
+        "get_available_apps",
+        "get_disabled_apps",
+        "get_installed_apps",
+        "get_uninstalled_apps",
+        "get_app_updates",
+        "open_app_store",
+        "get_app_status",
+        "uninstall_app",
+        "update_app"
+      ],
+      "constants": []
+    },
+    "py4cytoscape/collections.py": {
+      "function_count": 4,
+      "functions": [
+        "get_collection_list",
+        "get_collection_suid",
+        "get_collection_name",
+        "get_collection_networks"
+      ],
+      "constants": []
+    },
+    "py4cytoscape/commands.py": {
+      "function_count": 19,
+      "functions": [
+        "cyrest_api",
+        "cyrest_delete",
+        "cyrest_get",
+        "cyrest_post",
+        "cyrest_put",
+        "commands_api",
+        "commands_get",
+        "commands_help",
+        "commands_post",
+        "commands_run",
+        "command_echo",
+        "command_open_dialog",
+        "command_pause",
+        "command_quit",
+        "command_run_file",
+        "command_sleep",
+        "sub_versions",
+        "do_initialize_sandbox",
+        "do_set_sandbox"
+      ],
+      "constants": []
+    },
+    "py4cytoscape/cy_ndex.py": {
+      "function_count": 4,
+      "functions": [
+        "import_network_from_ndex",
+        "export_network_to_ndex",
+        "update_network_in_ndex",
+        "get_network_ndex_id"
+      ],
+      "constants": []
+    },
+    "py4cytoscape/cytoscape_system.py": {
+      "function_count": 6,
+      "functions": [
+        "cytoscape_ping",
+        "cytoscape_version_info",
+        "cytoscape_api_versions",
+        "cytoscape_number_of_cores",
+        "cytoscape_memory_status",
+        "cytoscape_free_memory"
+      ],
+      "constants": []
+    },
+    "py4cytoscape/decorators.py": {
+      "function_count": 2,
+      "functions": [
+        "debug",
+        "timer"
+      ],
+      "constants": []
+    },
+    "py4cytoscape/exceptions.py": {
+      "function_count": 0,
+      "functions": [],
+      "constants": []
+    },
+    "py4cytoscape/filters.py": {
+      "function_count": 7,
+      "functions": [
+        "apply_filter",
+        "create_column_filter",
+        "create_degree_filter",
+        "create_composite_filter",
+        "get_filter_list",
+        "export_filters",
+        "import_filters"
+      ],
+      "constants": []
+    },
+    "py4cytoscape/groups.py": {
+      "function_count": 9,
+      "functions": [
+        "add_to_group",
+        "collapse_group",
+        "create_group",
+        "create_group_by_column",
+        "expand_group",
+        "get_group_info",
+        "list_groups",
+        "remove_from_group",
+        "delete_group"
+      ],
+      "constants": []
+    },
+    "py4cytoscape/layouts.py": {
+      "function_count": 12,
+      "functions": [
+        "bundle_edges",
+        "clear_edge_bends",
+        "layout_network",
+        "layout_copycat",
+        "get_layout_names",
+        "get_layout_name_mapping",
+        "get_layout_property_names",
+        "get_layout_property_type",
+        "get_layout_property_value",
+        "set_layout_properties",
+        "rotate_layout",
+        "scale_layout"
+      ],
+      "constants": []
+    },
+    "py4cytoscape/network_selection.py": {
+      "function_count": 21,
+      "functions": [
+        "clear_selection",
+        "select_all",
+        "select_first_neighbors",
+        "select_nodes",
+        "select_all_nodes",
+        "get_selected_node_count",
+        "get_selected_nodes",
+        "invert_node_selection",
+        "delete_selected_nodes",
+        "select_nodes_connected_by_selected_edges",
+        "select_edges",
+        "select_all_edges",
+        "invert_edge_selection",
+        "delete_selected_edges",
+        "get_selected_edge_count",
+        "get_selected_edges",
+        "select_edges_connecting_selected_nodes",
+        "select_edges_adjacent_to_selected_nodes",
+        "select_edges_adjacent_to_nodes",
+        "delete_duplicate_edges",
+        "delete_self_loops"
+      ],
+      "constants": []
+    },
+    "py4cytoscape/network_views.py": {
+      "function_count": 7,
+      "functions": [
+        "create_view",
+        "get_network_views",
+        "get_network_view_suid",
+        "fit_content",
+        "set_current_view",
+        "export_image",
+        "toggle_graphics_details"
+      ],
+      "constants": [
+        "_JPG_TYPE",
+        "_PDF_TYPE",
+        "_PNG_TYPE",
+        "_PS_TYPE",
+        "_SVG_TYPE",
+        "_SUPPLIED_TYPE",
+        "_TYPE_MAP"
+      ]
+    },
+    "py4cytoscape/networks.py": {
+      "function_count": 28,
+      "functions": [
+        "set_current_network",
+        "rename_network",
+        "get_network_count",
+        "get_network_name",
+        "get_network_suid",
+        "get_network_list",
+        "export_network",
+        "delete_network",
+        "delete_all_networks",
+        "get_first_neighbors",
+        "add_cy_nodes",
+        "get_node_count",
+        "get_all_nodes",
+        "add_cy_edges",
+        "get_edge_count",
+        "get_edge_info",
+        "get_all_edges",
+        "clone_network",
+        "create_subnetwork",
+        "create_network_from_igraph",
+        "create_network_from_networkx",
+        "create_network_from_data_frames",
+        "create_network_from_cytoscapejs",
+        "import_network_from_tabular_file",
+        "import_network_from_file",
+        "create_igraph_from_network",
+        "create_networkx_from_network",
+        "create_cytoscapejs_from_network"
+      ],
+      "constants": []
+    },
+    "py4cytoscape/notebook.py": {
+      "function_count": 2,
+      "functions": [
+        "notebook_export_show_image",
+        "notebook_show_image"
+      ],
+      "constants": []
+    },
+    "py4cytoscape/py4cytoscape_logger.py": {
+      "function_count": 6,
+      "functions": [
+        "set_summary_logger",
+        "cy_log",
+        "log_http_request",
+        "log_http_result",
+        "narrate",
+        "show_error"
+      ],
+      "constants": [
+        "_RESOLVED_DETAIL_LOG_DIR",
+        "_NESTING_SPACER",
+        "_FUNCTION_SPACER",
+        "_SPHINX_BUILD"
+      ]
+    },
+    "py4cytoscape/py4cytoscape_logger_settings.py": {
+      "function_count": 0,
+      "functions": [],
+      "constants": [
+        "_SUMMARY_LOG_LEVEL",
+        "_SUMMARY_ENABLE_HTTP_CALLS",
+        "_SUMMARY_ENABLE_HTTP_CONTENT",
+        "_DETAIL_LOG_LEVEL",
+        "_DETAIL_ENABLE_HTTP_CALLS",
+        "_DETAIL_ENABLE_HTTP_CONTENT",
+        "_DETAIL_LOG_DIR",
+        "_DETAIL_LOG_NAME"
+      ]
+    },
+    "py4cytoscape/py4cytoscape_notebook.py": {
+      "function_count": 8,
+      "functions": [
+        "get_browser_client_channel",
+        "get_jupyter_bridge_url",
+        "do_request_jupyter_bridge",
+        "set_notebook_is_running",
+        "get_notebook_is_running",
+        "execution_environment",
+        "check_execution_environment",
+        "get_browser_client_js"
+      ],
+      "constants": [
+        "_CHANNEL",
+        "_JUPYTER_BRIDGE_URL",
+        "_CYREST_URL_V1"
+      ]
+    },
+    "py4cytoscape/py4cytoscape_sandbox.py": {
+      "function_count": 13,
+      "functions": [
+        "sandbox_initializer",
+        "set_default_sandbox",
+        "get_default_sandbox",
+        "set_default_sandbox_path",
+        "get_default_sandbox_path",
+        "get_current_sandbox_name",
+        "get_current_sandbox_path",
+        "get_current_sandbox",
+        "set_current_sandbox",
+        "set_sandbox_reinitialize",
+        "get_sandbox_reinitialize",
+        "get_abs_sandbox_path",
+        "reset_default_sandbox"
+      ],
+      "constants": [
+        "PREDEFINED_SANDBOX_NAME",
+        "_SANDBOX_TEMPLATE"
+      ]
+    },
+    "py4cytoscape/py4cytoscape_tuning.py": {
+      "function_count": 5,
+      "functions": [
+        "set_catchup_filter_secs",
+        "set_model_propagation_secs",
+        "set_catchup_network_secs",
+        "set_catchup_network_timeout_secs",
+        "set_catchup_network_merge_secs"
+      ],
+      "constants": [
+        "CATCHUP_FILTER_SECS",
+        "MODEL_PROPAGATION_SECS",
+        "CATCHUP_NETWORK_SECS",
+        "CATCHUP_NETWORK_TIMEOUT_SECS",
+        "CATCHUP_NETWORK_MERGE_SECS"
+      ]
+    },
+    "py4cytoscape/py4cytoscape_utils.py": {
+      "function_count": 31,
+      "functions": [
+        "cyPalette",
+        "verify_brightness_contrast",
+        "verify_hex_color",
+        "verify_hex_colors",
+        "verify_opacity",
+        "verify_opacities",
+        "verify_dimensions",
+        "verify_slot",
+        "verify_unique",
+        "verify_positive",
+        "verify_non_negative",
+        "verify_font_style",
+        "verify_canvas",
+        "verify_node_shapes",
+        "verify_edge_shapes",
+        "verify_bools",
+        "verify_strs",
+        "normalize_rotation",
+        "node_name_to_node_suid",
+        "node_suid_to_node_name",
+        "edge_name_to_edge_suid",
+        "edge_suid_to_edge_name",
+        "table_column_exists",
+        "check_supported_versions",
+        "verify_supported_versions",
+        "normalize_list",
+        "prep_post_query_lists",
+        "parse_edges",
+        "build_url",
+        "normalize_mapping",
+        "normalize_prop_name"
+      ],
+      "constants": [
+        "LOCAL_BASE_URL",
+        "DEFAULT_BASE_URL"
+      ]
+    },
+    "py4cytoscape/sandbox.py": {
+      "function_count": 7,
+      "functions": [
+        "sandbox_set",
+        "sandbox_remove",
+        "sandbox_get_file_info",
+        "sandbox_send_to",
+        "sandbox_url_to",
+        "sandbox_get_from",
+        "sandbox_remove_file"
+      ],
+      "constants": []
+    },
+    "py4cytoscape/session.py": {
+      "function_count": 3,
+      "functions": [
+        "close_session",
+        "open_session",
+        "save_session"
+      ],
+      "constants": []
+    },
+    "py4cytoscape/style_auto_mappings.py": {
+      "function_count": 54,
+      "functions": [
+        "palette_color_random",
+        "palette_color_brewer_q_Pastel2",
+        "palette_color_brewer_q_Pastel1",
+        "palette_color_brewer_q_Dark2",
+        "palette_color_brewer_q_Accent",
+        "palette_color_brewer_q_Paired",
+        "palette_color_brewer_q_Set1",
+        "palette_color_brewer_q_Set2",
+        "palette_color_brewer_q_Set3",
+        "palette_color_brewer_s_YlGn",
+        "palette_color_brewer_s_YlGnBu",
+        "palette_color_brewer_s_GnBu",
+        "palette_color_brewer_s_BuGn",
+        "palette_color_brewer_s_PuBuGn",
+        "palette_color_brewer_s_PuBu",
+        "palette_color_brewer_s_BuPu",
+        "palette_color_brewer_s_RdPu",
+        "palette_color_brewer_s_PuRd",
+        "palette_color_brewer_s_OrRd",
+        "palette_color_brewer_s_YlOrRd",
+        "palette_color_brewer_s_YlOrBr",
+        "palette_color_brewer_s_Purples",
+        "palette_color_brewer_s_Blues",
+        "palette_color_brewer_s_Greens",
+        "palette_color_brewer_s_Oranges",
+        "palette_color_brewer_s_Reds",
+        "palette_color_brewer_s_Greys",
+        "palette_color_brewer_d_PuOr",
+        "palette_color_brewer_d_BrBG",
+        "palette_color_brewer_d_PRGn",
+        "palette_color_brewer_d_PiYG",
+        "palette_color_brewer_d_RdBu",
+        "palette_color_brewer_d_RdGy",
+        "palette_color_brewer_d_RdYlBu",
+        "palette_color_brewer_d_Spectral",
+        "palette_color_brewer_d_RdYlGn",
+        "scheme_d_shapes",
+        "scheme_d_line_styles",
+        "scheme_d_arrow_shapes",
+        "scheme_d_number_random",
+        "scheme_d_number_series",
+        "scheme_c_number_continuous",
+        "gen_node_color_map",
+        "gen_edge_color_map",
+        "gen_node_opacity_map",
+        "gen_edge_opacity_map",
+        "gen_node_width_map",
+        "gen_edge_width_map",
+        "gen_node_height_map",
+        "gen_node_size_map",
+        "gen_edge_size_map",
+        "gen_node_shape_map",
+        "gen_edge_line_style_map",
+        "gen_edge_arrow_map"
+      ],
+      "constants": []
+    },
+    "py4cytoscape/style_bypasses.py": {
+      "function_count": 50,
+      "functions": [
+        "set_node_property_bypass",
+        "clear_node_property_bypass",
+        "set_edge_property_bypass",
+        "clear_edge_property_bypass",
+        "set_network_property_bypass",
+        "clear_network_property_bypass",
+        "unhide_all",
+        "set_node_color_bypass",
+        "set_node_size_bypass",
+        "set_node_position_bypass",
+        "set_node_tooltip_bypass",
+        "set_node_width_bypass",
+        "set_node_height_bypass",
+        "set_node_label_bypass",
+        "set_node_label_position_bypass",
+        "set_node_font_face_bypass",
+        "set_node_font_size_bypass",
+        "set_node_label_color_bypass",
+        "set_node_shape_bypass",
+        "set_node_border_width_bypass",
+        "set_node_border_color_bypass",
+        "set_node_opacity_bypass",
+        "clear_node_opacity_bypass",
+        "set_node_fill_opacity_bypass",
+        "set_node_border_opacity_bypass",
+        "set_node_label_opacity_bypass",
+        "hide_selected_nodes",
+        "hide_nodes",
+        "unhide_nodes",
+        "set_edge_opacity_bypass",
+        "set_edge_color_bypass",
+        "set_edge_label_bypass",
+        "set_edge_font_face_bypass",
+        "set_edge_font_size_bypass",
+        "set_edge_label_color_bypass",
+        "set_edge_tooltip_bypass",
+        "set_edge_line_width_bypass",
+        "set_edge_line_style_bypass",
+        "set_edge_source_arrow_shape_bypass",
+        "set_edge_target_arrow_shape_bypass",
+        "set_edge_source_arrow_color_bypass",
+        "set_edge_target_arrow_color_bypass",
+        "set_edge_label_opacity_bypass",
+        "hide_selected_edges",
+        "hide_edges",
+        "unhide_edges",
+        "set_network_zoom_bypass",
+        "clear_network_zoom_bypass",
+        "set_network_center_bypass",
+        "clear_network_center_bypass"
+      ],
+      "constants": []
+    },
+    "py4cytoscape/style_defaults.py": {
+      "function_count": 50,
+      "functions": [
+        "update_style_defaults",
+        "get_visual_property_default",
+        "set_visual_property_default",
+        "set_node_border_color_default",
+        "set_node_border_width_default",
+        "set_node_border_opacity_default",
+        "set_node_color_default",
+        "set_node_custom_bar_chart",
+        "set_node_custom_box_chart",
+        "set_node_custom_heat_map_chart",
+        "set_node_custom_line_chart",
+        "set_node_custom_pie_chart",
+        "set_node_custom_ring_chart",
+        "set_node_custom_linear_gradient",
+        "set_node_custom_radial_gradient",
+        "set_node_custom_position",
+        "remove_node_custom_graphics",
+        "set_node_fill_opacity_default",
+        "set_node_font_face_default",
+        "set_node_font_size_default",
+        "set_node_height_default",
+        "set_node_label_default",
+        "set_node_label_color_default",
+        "set_node_label_opacity_default",
+        "get_node_selection_color_default",
+        "get_node_label_position_default",
+        "set_node_selection_color_default",
+        "set_node_shape_default",
+        "set_node_size_default",
+        "set_node_width_default",
+        "set_node_label_position_default",
+        "set_node_tooltip_default",
+        "set_edge_color_default",
+        "set_edge_font_face_default",
+        "set_edge_font_size_default",
+        "set_edge_label_default",
+        "set_edge_label_color_default",
+        "set_edge_label_opacity_default",
+        "set_edge_line_width_default",
+        "set_edge_line_style_default",
+        "set_edge_opacity_default",
+        "get_edge_selection_color_default",
+        "set_edge_selection_color_default",
+        "set_edge_source_arrow_color_default",
+        "set_edge_target_arrow_color_default",
+        "set_edge_source_arrow_shape_default",
+        "set_edge_target_arrow_shape_default",
+        "set_edge_tooltip_default",
+        "get_background_color_default",
+        "set_background_color_default"
+      ],
+      "constants": []
+    },
+    "py4cytoscape/style_dependencies.py": {
+      "function_count": 5,
+      "functions": [
+        "get_style_dependencies",
+        "set_style_dependencies",
+        "match_arrow_color_to_edge",
+        "lock_node_dimensions",
+        "sync_node_custom_graphics_size"
+      ],
+      "constants": []
+    },
+    "py4cytoscape/style_mappings.py": {
+      "function_count": 37,
+      "functions": [
+        "map_visual_property",
+        "update_style_mapping",
+        "delete_style_mapping",
+        "get_style_mapping",
+        "get_style_all_mappings",
+        "set_node_border_color_mapping",
+        "set_node_border_opacity_mapping",
+        "set_node_border_width_mapping",
+        "set_node_color_mapping",
+        "set_node_combo_opacity_mapping",
+        "set_node_fill_opacity_mapping",
+        "set_node_font_face_mapping",
+        "set_node_font_size_mapping",
+        "set_node_height_mapping",
+        "set_node_label_mapping",
+        "set_node_label_color_mapping",
+        "set_node_label_opacity_mapping",
+        "set_node_shape_mapping",
+        "set_node_size_mapping",
+        "set_node_tooltip_mapping",
+        "set_node_width_mapping",
+        "set_edge_color_mapping",
+        "set_edge_font_face_mapping",
+        "set_edge_font_size_mapping",
+        "set_edge_label_mapping",
+        "set_edge_label_color_mapping",
+        "set_edge_label_opacity_mapping",
+        "set_edge_line_style_mapping",
+        "set_edge_line_width_mapping",
+        "set_edge_opacity_mapping",
+        "set_edge_target_arrow_maping",
+        "set_edge_source_arrow_mapping",
+        "set_edge_target_arrow_color_mapping",
+        "set_edge_source_arrow_color_mapping",
+        "set_edge_target_arrow_shape_mapping",
+        "set_edge_source_arrow_shape_mapping",
+        "set_edge_tooltip_mapping"
+      ],
+      "constants": []
+    },
+    "py4cytoscape/style_values.py": {
+      "function_count": 15,
+      "functions": [
+        "get_node_property",
+        "get_edge_property",
+        "get_network_property",
+        "get_node_color",
+        "get_node_size",
+        "get_node_width",
+        "get_node_height",
+        "get_node_position",
+        "get_node_label_position",
+        "get_edge_line_width",
+        "get_edge_color",
+        "get_edge_line_style",
+        "get_edge_target_arrow_shape",
+        "get_network_center",
+        "get_network_zoom"
+      ],
+      "constants": []
+    },
+    "py4cytoscape/style_visual_props.py": {
+      "function_count": 0,
+      "functions": [],
+      "constants": [
+        "NODE_COLOR_PROPERTIES",
+        "NODE_DIMENSION_PROPERTIES",
+        "NODE_OPACITY_PROPERTIES",
+        "NODE_SHAPE_PROPERTIES",
+        "NODE_TOOLTIP_PROPERTIES",
+        "NODE_FONT_FACE_PROPERTIES",
+        "NODE_LABEL_PROPERTIES",
+        "NODE_VISIBLE_PROPERTIES",
+        "NODE_CUSTOM_GRAPHICS_PROPERTIES",
+        "NODE_CUSTOM_GRAPHICS_POSITION_PROPERTIES",
+        "EDGE_COLOR_PROPERTIES",
+        "EDGE_DIMENSION_PROPERTIES",
+        "EDGE_OPACITY_PROPERTIES",
+        "EDGE_LINE_STYLE_PROPERTIES",
+        "EDGE_ARROW_STYLE_PROPERTIES",
+        "EDGE_TOOLTIP_PROPERTIES",
+        "EDGE_FONT_FACE_PROPERTIES",
+        "EDGE_LABEL_PROPERTIES",
+        "EDGE_VISIBLE_PROPERTIES",
+        "NETWORK_COLOR_PROPERTIES",
+        "COLOR_PROPERTIES",
+        "DIMENSION_PROPERTIES",
+        "OPACITY_PROPERTIES",
+        "SHAPE_PROPERTIES",
+        "LINE_STYLE_PROPERTIES",
+        "ARROW_STYLE_PROPERTIES",
+        "TOOLTIP_PROPERTIES",
+        "LABEL_PROPERTIES",
+        "FONT_FACE_PROPERTIES",
+        "VISIBLE_PROPERTIES",
+        "CUSTOM_GRAPHICS_PROPERTIES",
+        "PROPERTY_NAME_MAP"
+      ]
+    },
+    "py4cytoscape/styles.py": {
+      "function_count": 14,
+      "functions": [
+        "copy_visual_style",
+        "get_visual_style_JSON",
+        "create_visual_style",
+        "delete_visual_style",
+        "delete_all_visual_styles",
+        "export_visual_styles",
+        "import_visual_styles",
+        "get_visual_style_names",
+        "set_visual_style",
+        "get_arrow_shapes",
+        "get_line_styles",
+        "get_node_shapes",
+        "get_visual_property_names",
+        "get_current_style"
+      ],
+      "constants": []
+    },
+    "py4cytoscape/tables.py": {
+      "function_count": 9,
+      "functions": [
+        "delete_table_column",
+        "get_table_columns",
+        "get_table_value",
+        "get_table_column_names",
+        "get_table_column_types",
+        "load_table_data_from_file",
+        "load_table_data",
+        "map_table_column",
+        "rename_table_column"
+      ],
+      "constants": []
+    },
+    "py4cytoscape/tools.py": {
+      "function_count": 12,
+      "functions": [
+        "analyze_network",
+        "cybrowser_close",
+        "cybrowser_dialog",
+        "cybrowser_hide",
+        "cybrowser_list",
+        "cybrowser_send",
+        "cybrowser_show",
+        "cybrowser_version",
+        "diffusion_basic",
+        "diffusion_advanced",
+        "merge_networks",
+        "import_file_from_url"
+      ],
+      "constants": []
+    },
+    "py4cytoscape/user_interface.py": {
+      "function_count": 4,
+      "functions": [
+        "dock_panel",
+        "float_panel",
+        "hide_panel",
+        "hide_all_panels"
+      ],
+      "constants": []
+    }
+  }
+}
